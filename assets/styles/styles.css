@@ -221,7 +221,7 @@ article.story-content {
 article.story-content > p {
     font-family: 'Merriweather';
     text-align: justify;
-    font-size: 2rem;
+    font-size: 1.5rem;
     word-spacing: 5px;
     line-height: 25px;
 }
