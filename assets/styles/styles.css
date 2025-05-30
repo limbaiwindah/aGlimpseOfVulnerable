@@ -1,0 +1,308 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+html {
+    font-size: 62.5%; /* 62.5% of the browser’s default 16px font size=10px -- 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    margin: auto;
+}
+
+h1 {
+    font-size: 4.8rem;
+    text-align: center;
+    font-family: 'Fira Sans', sans;
+    font-style: italic;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+a {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.7rem;
+    text-decoration: underline wavy 0.1em rgb(189, 131, 110);
+    color: black;
+    transition: color 0.5s ease;
+}
+
+a:hover {
+    text-decoration: 1.5px underline rgb(189, 131, 110);
+    color: #b77979;
+}
+
+.introduction > h2 {
+    font-size: 3rem;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+    color: #5D291A;
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+p {
+    font-size: 1.6rem;
+    font-family: 'Fira Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    color: #5D291A;
+    text-align: justify;
+}
+
+/* Default: large screen shows full nav, hides hamburger */
+.hamburger-menu {
+    display: none;
+    font-size: 3rem;
+    cursor: pointer; 
+    margin-right: 10px;
+}
+
+nav.sticky-nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    z-index: 1000; /*makes sure it's on top on every other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0.2rem; /* vertical padding */
+}
+
+/* Small screen: show hamburger, hide nav links */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .sticky-nav {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sticky-nav.active {
+        display: flex;
+    } 
+}
+
+/* Show full nav on larger screens */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .sticky-nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        gap: 30px;
+        justify-content: center;
+        padding: 0.2rem;
+    }
+}
+
+/* Show hamburger on smaller screens */
+@media (max-width: 767px) {
+    .hamburger {
+        display: flex;
+        flex-direction: row-reverse;
+    } 
+}
+
+nav.sticky-nav a {
+    font-family: "Quicksand", sans-serif;
+    text-decoration: none;
+    color: #5D291A;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7rem;
+    padding: 0.5rem 1rem; /* add some padding for clickable area */
+    display: flex;
+    align-items: center; /* vertical center */
+}
+
+
+.header-img {
+    width: 80%;
+    display: block;
+    margin: auto;
+    height: auto;
+    max-height: 500px;
+    margin-bottom: 80px;
+}
+
+.menu {
+    width: 100%;
+    display: inline-flex;
+    gap: rem; /* space between divs */
+    justify-content: center;
+    padding: 1rem 0;
+    flex-wrap: wrap; /* makes the menu responsive to device width and adjust accordingly */
+}
+
+.menu-container {
+    width: 200px;
+    height: 100px;
+    border: none;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.7s ease; /* smooth hover effect */
+    flex-basis: 200px;
+}
+
+.menu-container p {
+    padding: 10px 5px;
+}
+
+.menu-container:hover {
+    transform: scale(1.05);
+}
+
+.menu-title {
+    position: absolute;
+    bottom: 3.5rem;
+    /* stick near bottom instead of guessing top */
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    background-color: rgba(248, 221, 221, 0.462);
+    /* soft background to make text readable */
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 75%;
+}
+
+article.story-content {
+    width: 75%;
+    margin: auto;
+}
+
+article.story-content > p {
+    font-family: 'Merriweather';
+    text-align: justify;
+    font-size: 2rem;
+    word-spacing: 5px;
+    line-height: 25px;
+}
+
+aside.related-posts {
+    width: 75%;
+    margin: auto ;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: rgba(248, 221, 221, 0.462);
+    padding: 10px;
+    border-radius: 5px;
+    border: #977e77 dashed;
+    margin: 10px auto;
+}
+
+aside.related-posts li a {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: black;
+}
+
+aside.related-posts li {
+    list-style-type: none;
+    margin: 0;
+}
+
+main.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+section.stories {
+    display: flex;
+}
+
+section.page-intro {
+    display: flex;
+    align-items: center;
+}
+
+section.page-intro img {
+    min-width: 500px;
+    max-width: 800px;
+    max-height: 400px;
+}
+
+p.page-intro-text {
+    font-family: Merriweather;
+    font-style: italic;
+    font-size: 2rem;
+    color: rgb(64, 49, 49);
+    margin: 30px;
+}
+
+section.stories li {
+    line-height: 4rem;
+    list-style-type: square;
+    margin-left: 10px;
+}
+
+.story-list li a {
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+    section.page-intro {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.page-intro img {
+        min-width: 250px;
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
